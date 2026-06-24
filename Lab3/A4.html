@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. WAP in JavaScript to print the Fibonacci series of a number. (A)</title>
+</head>
+<body>
+    <script>
+        ansSeq = "0,1";
+        n1=0;
+        n2 =1;
+        num =parseInt(prompt("Enter the number of elements to generate Fibonacci sequence."))-2;
+        for(i=1; i<=num; i++){
+            sampleAns = n1+n2;
+            ansSeq= ansSeq+" ,"+ sampleAns;
+            n1 = n2;
+            n2 = sampleAns
+        }
+        alert("Fibonacci sequence of "+(num+2)+" is "+ ansSeq)
+    </script>
+</body>
+</html>

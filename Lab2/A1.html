@@ -1,0 +1,502 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan University | Top Engineering College & Private University in Rajkot, Gujarat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d233a; /* Deep Navy Blue */
+            --secondary-color: #d9232d; /* Accent Red */
+            --light-bg: #f8f9fa;
+            --text-dark: #212529;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Top Bar Info */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-size: 0.85rem;
+            padding: 6px 0;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        .top-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+        .top-bar a:hover {
+            color: #ffc107;
+        }
+
+        /* Running Announcement Marquee */
+        .marquee-container {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 8px 0;
+            font-weight: 500;
+            border-bottom: 1px solid #ffeeba;
+        }
+
+        /* Navigation Header */
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background-color: #ffffff !important;
+        }
+        .navbar-brand img {
+            max-height: 65px;
+        }
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+            padding: 10px 15px !important;
+            transition: 0.3s;
+        }
+        .nav-link:hover, .nav-item.active .nav-link {
+            color: var(--secondary-color) !important;
+        }
+        .btn-admission {
+            background-color: var(--secondary-color);
+            color: white !important;
+            border-radius: 4px;
+            font-weight: 600;
+            padding: 8px 20px !important;
+        }
+        .btn-admission:hover {
+            background-color: #b71c24;
+            box-shadow: 0 4px 10px rgba(217, 35, 45, 0.3);
+        }
+
+        /* Hero Carousel Slider */
+        .carousel-item {
+            height: 550px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(13, 35, 58, 0.65);
+        }
+        .carousel-caption {
+            bottom: 25%;
+            z-index: 2;
+            text-align: left;
+        }
+        .carousel-caption h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .carousel-caption p {
+            font-size: 1.25rem;
+            max-width: 700px;
+        }
+
+        /* Highlights Section */
+        .stat-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+            transition: 0.3s transform;
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--secondary-color);
+        }
+        .stat-box h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        /* Core Section Titles */
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Why Darshan CSS */
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid #eef2f5;
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: transparent;
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(13, 35, 58, 0.08);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .feature-card:hover .feature-icon {
+            background: var(--secondary-color);
+            color: #fff;
+        }
+
+        /* Placement Section */
+        .placement-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+        }
+        .table-placement {
+            color: white;
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        /* Footer Customization */
+        footer {
+            background-color: #081625;
+            color: #a0b2c6;
+            font-size: 0.9rem;
+        }
+        footer h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        footer h5::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            bottom: -8px;
+            left: 0;
+        }
+        footer a {
+            color: #a0b2c6;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        footer a:hover {
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+        .footer-bottom {
+            background-color: #040c14;
+            padding: 20px 0;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <span><i class="fa-solid fa-location-dot me-2 text-warning"></i> Rajkot - Morbi Highway, Gujarat, India</span>
+            </div>
+            <div>
+                <a href="tel:+917096979952"><i class="fa-solid fa-phone text-warning"></i> +91 70969 79952</a>
+                <a href="#"><i class="fa-solid fa-graduation-cap text-warning"></i> UMS Login</a>
+                <a href="#"><i class="fa-solid fa-book text-warning"></i> DLib</a>
+                <a href="#"><i class="fa-brands fa-android text-success"></i> DU App</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="marquee-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                        <i class="fa-solid fa-bullhorn text-danger me-2"></i> 
+                        <strong>Admission Open:</strong> Direct Admission for academic programs has already started. Kindly apply online via the DU Direct Admission Portal. For queries, contact +91-7096979962.
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="d-flex align-items-center">
+                    <div class="bg-dark text-white p-2 rounded me-2 fw-bold" style="letter-spacing: 1px;">DARSHAN</div>
+                    <div class="text-uppercase fw-bold text-dark d-none d-sm-block" style="font-size: 0.85rem; line-height:1.2;">
+                        University<br><span class="text-muted" style="font-size: 0.7rem;">Rajkot, Gujarat</span>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Know DU</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Placements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Campus Life</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Consultancy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Research</a></li>
+                    <li class="nav-item ms-lg-3"><a class="nav-link btn-admission text-white" href="#">Apply Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1470&auto=format&fit=crop');">
+                <div class="container h-100 position-relative">
+                    <div class="carousel-caption">
+                        <span class="badge bg-danger mb-3 px-3 py-2 fs-6">Established under Gujarat Act No. 15 of 2021</span>
+                        <h1>Darshan University</h1>
+                        <p class="lead">A prominent institution offering a broad scale of technical programs designed to implement a high-standard, skill-based foundation for career-driven education.</p>
+                        <a href="#" class="btn btn-danger btn-lg me-3 mt-3 px-4">Explore Programs</a>
+                        <a href="#" class="btn btn-outline-light btn-lg mt-3 px-4">Virtual 360° Tour</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop');">
+                <div class="container h-100 position-relative">
+                    <div class="carousel-caption">
+                        <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">Industry Driven Platforms</span>
+                        <h1>Excellence in Placements</h1>
+                        <p class="lead">Consistently holding robust corporate placement opportunities in Saurashtra with leading multi-national enterprises, technical consultancy labs, and engineering cells.</p>
+                        <a href="#" class="btn btn-danger btn-lg mt-3 px-4">View Placement Record</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="container style-stats" style="margin-top: -50px; position: relative; z-index: 10;">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <h2>10,000+</h2>
+                    <p class="text-muted mb-0 font-weight-bold">Students Trust</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <h2>21+ Acres</h2>
+                    <p class="text-muted mb-0 font-weight-bold">World-Class Campus</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <h2>4,000+</h2>
+                    <p class="text-muted mb-0 font-weight-bold">Consultancy Projects</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <h2>25+</h2>
+                    <p class="text-muted mb-0 font-weight-bold">UG / PG Courses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Why Study at Darshan University?</h2>
+                <p class="text-muted max-width-600 mx-auto mb-5">Imparting technical skillsets alongside deep discipline, corporate tie-ups, and structural industrial research laboratories.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-users-gear"></i></div>
+                        <h4>Dedicated Faculties</h4>
+                        <p class="text-muted small">Proudly holding a record of lowest structural faculty attrition rates to guarantee unbroken dedication and stable classroom teaching cycles.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-ban"></i></div>
+                        <h4>Disciplined Environment</h4>
+                        <p class="text-muted small">Mobile gadgets are restricted for students within premises to foster focus. Custom native UMS apps keep parents securely informed on performance trackers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h4>Skill Development</h4>
+                        <p class="text-muted small">Continuous hands-on software workshops through ASWDC setup alongside advanced tools to help adapt to global technological shifts.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-building-shield"></i></div>
+                        <h4>Industry & Consultancy</h4>
+                        <p class="text-muted small">Active Civil Consultancy Cell (CCC) and Energy Management Cell (EMC) running real projects on campus providing unmatched direct site exposure.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <h4>Excellent Placements</h4>
+                        <p class="text-muted small">Rigorous mock interviews and specialized training modules ensure that eligible students map safely into premium industrial placements.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-masks-theater"></i></div>
+                        <h4>Extra-Curricular Growth</h4>
+                        <p class="text-muted small">A platform for vibrant socio-cultural fests like 'Udaan' (Annual Day), 'Thanganaat' (Navratri Celebration), 'Frolic' (Tech Fest), and 'Sprint' (Sports).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="placement-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <span class="text-warning fw-bold text-uppercase">Corporate Success Records</span>
+                    <h2 class="mt-2 mb-4 fw-bold">Placement Highlights</h2>
+                    <p class="opacity-75">Darshan University acts as a primary resource pool for top-tier companies across India. Our rigorous corporate engagement curriculum prepares professionals to match global industrial expectations.</p>
+                    <a href="#" class="btn btn-outline-light btn-md mt-3">View Leading Recruiters</a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="table-responsive bg-dark bg-opacity-20 p-4 rounded-3 border border-secondary">
+                        <table class="table table-placement mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Placement Track Metric</th>
+                                    <th class="text-end">Current Year</th>
+                                    <th class="text-end">Previous Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Overall Placement Percentage</td>
+                                    <td class="text-end text-warning fw-bold">95%</td>
+                                    <td class="text-end opacity-75">84%</td>
+                                </tr>
+                                <tr>
+                                    <td>Highest Package Offered</td>
+                                    <td class="text-end text-warning fw-bold">10.00 LPA</td>
+                                    <td class="text-end opacity-75">7.00 LPA</td>
+                                </tr>
+                                <tr>
+                                    <td>Average Annual Package</td>
+                                    <td class="text-end text-warning fw-bold">3.43 LPA</td>
+                                    <td class="text-end opacity-75">3.11 LPA</td>
+                                </tr>
+                                <tr>
+                                    <td>Partnering Companies Visited</td>
+                                    <td class="text-end text-warning fw-bold">505+</td>
+                                    <td class="text-end opacity-75">427</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-5">
+        <div class="container pb-4">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white">Darshan University</h5>
+                    <p class="mt-3 small lh-lg">Foundation laid down in the year 2009, established and consolidated under Gujarat Private Universities Act of 2021. Recognized by UGC and approved by AICTE.</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 text-white fs-5"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="me-3 text-white fs-5"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="me-3 text-white fs-5"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="me-3 text-white fs-5"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>For Students & Parents</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> University Circulars</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> UMS App (Android)</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> UMS App (iPhone)</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> DLib Library Systems</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> News Letters Directory</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Other Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> Consultancy (CCC)</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> Energy Audits (EMC)</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> ASWDC Development</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> Engineering Calculators</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right me-2 small"></i> Careers at DU</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Center</h5>
+                    <p class="small mb-2"><i class="fa-solid fa-location-dot me-2 text-danger"></i> Rajkot-Morbi Highway, At-Hadala, Near Rajkot, Gujarat - 363650</p>
+                    <p class="small mb-2"><i class="fa-solid fa-envelope me-2 text-danger"></i> info@darshan.ac.in</p>
+                    <p class="small"><i class="fa-solid fa-phone me-2 text-danger"></i> +91-9727747310</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p class="mb-0">&copy; 2026 Darshan University. All Rights Reserved. | Designed with Bootstrap framework tools.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .newdiv {
+        height: 100px;
+        width: 100px;
+        animation-name: color-changing;
+        animation-duration: 5s;    /* it is mandatory*/
+        animation-iteration-count: infinite;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes color-changing {
+        from {
+          background-color: red;
+        }
+        to {
+          background-color: yellow;
+        }
+      }
+      .movingdiv {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        animation-name: movingdiv;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        background-color: red;
+        animation-delay: 2s;
+        animation-direction: reverse;
+        animation-timing-function: ease-in;
+      }
+      @keyframes movingdiv {
+        0% {
+          top: 0px;
+          left: 0px;
+        }
+        25% {
+          top: 0px;
+          left: 100px;
+        }
+        50% {
+          top: 100px;
+          left: 100px;
+        }
+        75% {
+          top: 100px;
+          left: 0px;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+        }
+      }
+
+      #link {
+        color: red;
+         
+      }
+      #link:visited {               
+        color: orange;
+         
+      }
+      .pra::first-line {
+        background-color: brown;
+        font-size: larger;
+        font-style: italic;
+      }
+      .pra::first-letter {
+        background-color: yellow;
+        font-size: xx-large;
+      }
+      .pra::selection {
+        background-color: blue;
+      }
+      .new {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+      }
+      .new:hover {
+        height: 200px;
+        width: 200px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+     <div class="newdiv"> </div> 
+     
+
+    <a
+      href="https://www.ajio.com/?&utm_source=google&utm_medium=cpc&utm_campaign=GSB_Brand_TROAS_Sept2025&gad_source=1&gad_campaignid=23011145465&gbraid=0AAAAADP0DvdXKKhYqcAOPLqA16vdeVqL3&gclid=Cj0KCQjw0JnRBhDJARIsALobnXaoA26oxgwrGfvP7sdPu1nyUq7drX0HW7r9dfudw5OV9b_Pj4Kv_YIaAjozEALw_wcB"
+      id="link"
+      target="_blank"
+      >click me
+    </a>
+    <p class="pra">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae eius,
+      eos laudantium aspernatur architecto totam, enim error sit odit tempora,
+      recusandae suscipit et fugiat libero? Ad id saepe ipsum dolorum.
+    </p>
+
+    <div class="new">this is hover effect</div> 
+
+    <div class="movingdiv">this is new</div> 
+      
+     
+  </body>
+</html>

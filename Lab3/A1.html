@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using pop-up box</title>
+</head>
+<body>
+    <script>
+        n1= parseFloat(prompt("Enter operator 1"));
+        n2 = parseFloat(prompt("Enter operator 2"));
+        op = prompt("Enter the operation(+,-,/,*)");
+        if(op=="+"){   
+            ans = n1+n2;
+        }
+        else if(op=="-"){
+            ans = n1-n2;
+        }
+        else if(op=="/"){
+            ans = n1/n2;
+        }
+        else if(op=="*"){
+            ans = n1*n2;
+        }
+        else{
+            ans ="Operation not selected from the given options."
+        }
+        alert("Ans is "+ ans)
+    </script>
+</body>
+</html>

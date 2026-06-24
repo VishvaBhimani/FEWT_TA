@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Write a JavaScript that uses a loop that searches a word in 
+        sentence held in an array, returning the index of the word. (B)
+    </title>
+</head>
+<body>
+    <script>
+        sentance = prompt("enter your sentance saparated by space")
+        word = prompt("enter your word")
+        arr = sentance.split(' ').map(String)
+        findIndex = -1
+
+        for(i=0 ; i<arr.length ; i++){
+            if(word===arr[i]){
+                findIndex = i;
+                break;
+            }
+        }
+
+        document.write("here your word" + word + "have this index " + findIndex + " in this sentance " + sentance)
+    </script>
+</body>
+</html>
