@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. WAP to display given patterns using JavaScript. (A)</title>
+  </head>
+  <body>
+    <script>
+            // 1
+
+            const n = 4;
+
+            for (let i = n; i >= 1; i--) {
+
+              for (let j = 1; j <= i; j++) {
+                document.write(j + " ");
+              }
+              document.write("<br/>");
+            }
+
+
+          //   2
+
+          const n1 = 4;
+
+
+      for (let i = 1; i <= n1; i++) {
+
+          for (let j = 1; j <= i; j++) {
+
+              if ((i + j) % 2 === 0) {
+                  document.write("1 ");
+              } else {
+                  document.write("0 ");
+              }
+          }
+          document.write("<br>");
+        }
+
+    // 3
+
+    const n3 = 5;
+
+for (let i = 1; i <= n3; i++) {
+     
+    for (let j = 1; j <= n3 - i; j++) {
+        document.write("&nbsp;"); 
+    }
+  
+    for (let j = 1; j <= i; j++) {
+        document.write("*");
+    }
+    document.write("<br>");  
+        }
+
+    </script>
+  </body>
+</html>

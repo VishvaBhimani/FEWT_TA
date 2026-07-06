@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. WAP in JavaScript to prime number between the given range of number. (A)</title>
+</head>
+<body>
+    <h1>2. WAP in JavaScript to get prime numbers between the given range of numbers. (A)</h1>
+    <script>
+        n1 = parseInt(prompt("Enter the starting point of range: "));
+        n2 = parseInt(prompt("Enter the ending point of the range: "));
+        ans = " "
+        for(i=n1;i<=n2;i++){
+            flag=0
+            for(j=2;j<i;j++){
+                if(i%j===0){
+                    flag =1;
+                    break;
+                }
+            }
+            if(flag == 0){
+                ans += ","+i
+            }
+        }
+
+        alert("Prime numbers in the range from:"+n1+"to"+n2+"are "+ ans);
+
+
+    </script>
+</body>
+</html>

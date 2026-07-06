@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Write a JavaScript to take 2-digit number and then separate these 2 digits, then multiply ƒrst digit by itself for second digit times. (B)</title>
+
+</head>
+<body>
+    <h1>5. Write a JavaScript to take 2-digit number and then separate these 2 digits, then multiply ƒrst digit by itself for second digit times. (B)
+
+    </h1>
+    <script>
+        num = parseInt(prompt("Enter a two digit number: "));
+        sDigit = num%10
+        fDigit = parseInt(num/10) %10;
+        ans = fDigit **sDigit;
+        alert(ans)
+    </script>
+</body>
+</html>

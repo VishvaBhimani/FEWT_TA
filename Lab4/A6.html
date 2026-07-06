@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Write an HTML page with JavaScript that takes a number from popup box in the range 0-999 and display it in words. If the number is out of range, it should show “out of range” and if it is not a number ,it should show “not a number” message in the result box. (A)</title>
+
+</head>
+<body>
+    <!-- <h1>
+        6. Write an HTML page with JavaScript that takes a number from popup box in the range 0-999 and display it in words. If the number is out of range, it should show “out of range” and if it is not a number ,it should show “not a number” message in the result box. (A).
+    </h1> -->
+    <script>
+        num = prompt("Enter a number.")
+        if(isNaN(num))
+        {
+            alert("not a number");
+        }
+        else if(num<0 || num>999)
+        {
+            alert("out of range");
+        }
+        else{
+            ans =""
+            ones =["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"];
+            tens=["","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
+            hundreds = ["One Hundred","Two Hundred","Three Hundred","Four Hundred","Five Hundred","Six Hundred","Seven Hundred","Eight Hundred","Nine Hundred"];
+            if(num>99){
+                ans += hundreds[parseInt(num/100)-1]
+                num = num%100;
+            }
+             if(num>19){
+                ans += " "+tens[parseInt(num/10)]
+                num = num%10;
+            }
+             if(num>=0){
+                ans += " "+ones[num]
+            }   
+            alert(ans);
+        }
+    </script>
+    
+</body>
+</html>
