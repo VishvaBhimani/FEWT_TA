@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Demonstrate different array functions like push, pop,
+         shift, unshift, splice, sort etc… (A)
+    </title>
+</head>
+<body>
+    <script>
+        n = prompt("enter any number sparated by comma")
+        arr = n.split(',').map(Number)
+
+        arr.push('3')
+        document.write("new array after push ---> "+arr + "<br/>" )//add at the end of the array
+
+        arr.pop()
+        document.write("new array after pop ---> " + arr + "<br/>")//remove element end of the array
+
+        arr.unshift("11")
+        document.write("new array after unshift ---> "+arr + "<br/>" )//add at the start of the array
+
+        arr.shift()
+        document.write("new array after shift ---> "+arr + "<br/>" )//remove at the start of the array
+
+        arr.sort()
+        document.write("new array after sort ---> "+arr + "<br/>" )//sort array aplhabeticaly and numarically 
+
+        arr.reverse()
+        document.write("new array after revers ---> "+arr + "<br/>" )//revers array 
+
+        arr.splice(1,2)//start index 1 and deleted 2 items
+        document.write("array of splice start index 1 and deleted items is 2 ---> "+ arr + "<br/>" )//delete given element and return array of deleted items
+
+        //they all are updated existed array not in new array
+
+        //map() transform every element of the array and 
+        // return new array 
+
+        mapArr = arr.map(num => num*2)
+        document.write("after map aplied new array ---> " + mapArr + "<br/>")
+        document.write("orignal array ---> " + arr + "<br/>")
+        
+        // filter() keep that item which pass given condition 
+        // return new array
+        filterArr = arr.filter(num => num>4)
+        document.write("after filter aplied new array ---> " + filterArr + "<br/>")
+        document.write("orignal array ---> " + arr + "<br/>")
+
+        // slice() cut out the peice of array which i want
+        // return new array
+        sliceArr = arr.slice(1,4)// start from 1 to 3 index , 4 was not included 
+        document.write("after filter aplied new array ---> " + sliceArr + "<br/>")
+        document.write("orignal array ---> " + arr + "<br/>")
+
+
+    </script>
+</body>
+</html>
