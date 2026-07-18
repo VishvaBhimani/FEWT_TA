@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="return CheckValidation()" action="">
+      <table>
+        <tr>
+          <td>
+            <label for="UserName">UserName</label>
+          </td>
+          <td>
+            <input type="text" id="UserName" placeholder="Enter UserName" />
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            <label for="Age">Age</label>
+          </td>
+          <td>
+            <input type="number" id="Age" placeholder="Enter Age" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="EnrollmentNo">EnrollmentNo</label>
+          </td>
+          <td>
+            <input
+              type="number"
+              id="EnrollmentNo"
+              placeholder="Enter Enrollment No"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Password">Password</label>
+          </td>
+          <td>
+            <input type="password" id="Password" placeholder="Enter Password" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="ConformPassword">ConformPassword</label>
+          </td>
+          <td>
+            <input
+              type="password"
+              id="ConformPassword"
+              placeholder="Enter ConformPassword"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="submit">
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      function CheckValidation() {
+        let check="";
+        //username//
+        let checkU = document.getElementById("UserName").value;
+        if (checkU.length<8) {
+          check+="username is outof limitation\n";
+          
+        }
+        
+
+        //enrollmentno//
+        let checkRN = document.getElementById("EnrollmentNo").value;
+        let pt1 = /^[0-9]{11}$/;
+        if (!pt1.test(checkRN)) {
+          check+="Enrollment number does not match\n";
+          
+        }
+      
+
+        //password//
+        let pass1 = document.getElementById("Password").value;
+        let pass2 = document.getElementById("ConformPassword").value;
+        if (pass1 != pass2) {
+          check+="invalid password\n";
+          
+        }
+        
+ 
+        //age//
+        let checkA=document.getElementById("Age").value;
+        if(checkA<18)
+        {
+          check+="age is not valid\n";
+          
+        }
+if(check!=="")
+{
+  alert("please fillup form regarding this messages:\n\n"+check);
+  return false
+
+
+}
+        alert("form submitted successfully");
+        return true 
+      }
+    </script>
+  </body>
+</html>

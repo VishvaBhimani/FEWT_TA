@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Easy CRUD</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            margin:40px;
+        }
+
+        input{
+            padding:8px;
+            width:220px;
+        }
+
+        button{
+            padding:8px 15px;
+            cursor:pointer;
+            margin-left:5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            width:400px;
+            margin-top:20px;
+        }
+
+        table,th,td{
+            border:1px solid black;
+        }
+
+        th,td{
+            padding:10px;
+            text-align:center;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Simple CRUD Operation</h2>
+
+<input type="text" id="txtName" placeholder="Enter Name">
+
+<button onclick="addData()">Add</button>
+
+<br><br>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Action</th>
+</tr>
+<tbody id="tableData"></tbody>
+</table>
+
+
+<script>
+let arr = [];
+
+// ADD
+function addData(){
+    let name = document.getElementById("txtName").value;
+
+    if(name==""){
+        alert("Enter Name");
+        return;
+    }
+
+    arr.push(name);
+
+    document.getElementById("txtName").value="";
+
+    showData();
+}
+
+
+// SHOW
+function showData(){
+    let output="";
+
+    for(let i=0;i<arr.length;i++){
+        output += `
+        <tr>
+            <td>${i+1}</td>
+            <td>${arr[i]}</td>
+            <td>
+                <button onclick="updateData(${i})">Update</button>
+                <button onclick="deleteData(${i})">Delete</button>
+
+            </td>
+
+        </tr>
+        `;
+    }
+
+    document.getElementById("tableData").innerHTML=output;
+
+}
+
+
+// UPDATE
+function updateData(index){
+
+    let newName = prompt("Enter New Name",arr[index]);
+
+    if(newName==""){
+        alert("Name cannot be empty");
+        return;
+    }
+
+    if(newName!=null){
+
+        arr[index]=newName;
+
+        showData();
+
+    }
+
+}
+
+
+// DELETE
+function deleteData(index){
+
+    arr.splice(index,1);
+
+    showData();
+
+}
+
+</script>
+
+</body>
+</html>

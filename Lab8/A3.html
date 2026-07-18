@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.WAP to demonstrate change in properties of HTML element using JavaScript. (A)</title>
+</head>
+<body>
+     <h1 id="myHeading">Original Text</h1>
+
+    <button onclick="changeProperties()">Change Properties</button>
+
+    <script>
+        function changeProperties() {
+            const element = document.getElementById("myHeading");
+
+            // 1. Changing Content Property
+            element.innerHTML = "<i>Text Changed!</i>";
+
+            // 2. Changing Style Properties
+            element.style.color = "red";
+            element.style.fontSize = "50px";
+
+            
+        }
+    </script>
+</body>
+</html>
+
+
+ <!-- // 3. Changing Attribute Property (Hiding it visually using hidden attribute)
+            // element.hidden = true; // Uncomment this to see attribute changes! -->
