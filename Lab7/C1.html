@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scintific calculator..</title>
+</head>
+<body>
+    <h2>Scientific Calculator</h2>
+
+<input type="text" id="screen" readonly>
+
+<br><br>
+
+<!-- Numbers -->
+<button onclick="show('7')">7</button>
+<button onclick="show('8')">8</button>
+<button onclick="show('9')">9</button>
+<button onclick="show('/')">/</button>
+
+<br><br>
+
+<button onclick="show('4')">4</button>
+<button onclick="show('5')">5</button>
+<button onclick="show('6')">6</button>
+<button onclick="show('*')">*</button>
+
+<br><br>
+
+<button onclick="show('1')">1</button>
+<button onclick="show('2')">2</button>
+<button onclick="show('3')">3</button>
+<button onclick="show('-')">-</button>
+
+<br><br>
+
+<button onclick="show('0')">0</button>
+<button onclick="show('.')">.</button>
+<button onclick="calculate()">=</button>
+<button onclick="show('+')">+</button>
+
+<br><br>
+
+<button onclick="clearScreen()">C</button>
+
+<br><br>
+
+<!-- Scientific Buttons -->
+<button onclick="sinValue()">Sin</button>
+<button onclick="cosValue()">Cos</button>
+<button onclick="tanValue()">Tan</button>
+
+<br><br>
+
+<button onclick="secValue()">Sec</button>
+<button onclick="cosecValue()">Cosec</button>
+<button onclick="cotValue()">Cot</button>
+
+
+<script>
+    function show(value)
+{
+    document.getElementById("screen").value += value;
+}
+
+// Calculate
+function calculate()
+{
+    var ans = eval(document.getElementById("screen").value);
+    document.getElementById("screen").value = ans;
+}
+
+// Clear
+function clearScreen()
+{
+    document.getElementById("screen").value = "";
+}
+
+// Sin
+function sinValue()
+{
+    var degree = Number(document.getElementById("screen").value);
+    var rad = degree * Math.PI / 180;
+
+    document.getElementById("screen").value = Math.sin(rad);
+}
+
+// Cos
+function cosValue()
+{
+    var degree = Number(document.getElementById("screen").value);
+    var rad = degree * Math.PI / 180;
+
+    document.getElementById("screen").value = Math.cos(rad);
+}
+
+// Tan
+function tanValue()
+{
+    var degree = Number(document.getElementById("screen").value);
+    var rad = degree * Math.PI / 180;
+
+    document.getElementById("screen").value = Math.tan(rad);
+}
+
+// Sec
+function secValue()
+{
+    var degree = Number(document.getElementById("screen").value);
+    var rad = degree * Math.PI / 180;
+
+    document.getElementById("screen").value = 1 / Math.cos(rad);
+}
+
+// Cosec
+function cosecValue()
+{
+    var degree = Number(document.getElementById("screen").value);
+    var rad = degree * Math.PI / 180;
+
+    document.getElementById("screen").value = 1 / Math.sin(rad);
+}
+
+// Cot
+function cotValue()
+{
+    var degree = Number(document.getElementById("screen").value);
+    var rad = degree * Math.PI / 180;
+
+    document.getElementById("screen").value = 1 / Math.tan(rad);
+}
+
+</script>
+</body>
+</html>

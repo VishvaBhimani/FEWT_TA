@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. WAP to create a basic graphical Calculator using HTML and JavaScript. (A)</title>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+            width: 300px;
+        }
+
+        /* The Screen Display */
+        #display {
+            width: 93%;
+            height: 50px;
+            background-color: #ecf0f1;
+            border: none;
+            border-radius: 5px;
+            font-size: 24px;
+            text-align: right;
+            padding: 5px 10px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* The Grid layout for buttons */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            height: 50px;
+            border: none;   
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #bdc3c7;
+        }
+
+        /* Different colors for specific functional buttons */
+        .clear-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .clear-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .operator-btn {
+            background-color: #f39c12;
+            color: white;
+        }
+        .operator-btn:hover {
+            background-color: #d35400;
+        }
+
+        .equal-btn {
+            background-color: #2ecc71;
+            color: white;
+            grid-column: span 1; /* Makes the '=' button wider */
+        }
+        .equal-btn:hover {
+            background-color: #27ae60;
+        } 
+    </style>
+</head>
+<body>
+        <div class="calculator">
+            <input type="text" id="display" readonly/>
+
+            <div class="buttons">
+                <button class="clear-btn" onclick="clearScreen()">C</button>
+                <button class="opration-btn" onclick="press('/')">/</button>
+                <button class="opration-btn" onclick="press('*')">*</button>
+                <button class="opration-btn" onclick="press('-')">-</button>
+              
+
+                <button class="number" onclick="press('7')">7</button>
+                <button class="number" onclick="press('8')">8</button>
+                <button class="number" onclick="press('9')">9</button>
+                <button class="opration-btn" onclick="press('+')">+</button>
+
+                <button class="number" onclick="press('4')">4</button>
+                <button class="number" onclick="press('5')">5</button>
+                <button class="number" onclick="press('6')">6</button>
+                <button class="equal-btn" onclick="calculate()">=</button>
+
+                <button class="number" onclick="press('1')">1</button>
+                <button class="number" onclick="press('2')">2</button>
+                <button class="number" onclick="press('3')">3</button>
+                <button class="number" onclick="press('0')">0</button>
+
+
+            </div>
+        </div>
+    <script>
+            display = document.getElementById("display")
+
+            function press(value){
+                display.value += value
+            }
+
+            function clearScreen(){
+                display.value = " "
+            }
+
+            function calculate(){
+                try{
+                    display.value = eval(display.value)
+                }
+                catch(err){
+                    display.value =  err;
+                }
+            }
+    </script>
+</body>
+</html>
