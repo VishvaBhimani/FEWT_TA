@@ -1,0 +1,187 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Snake Game</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #game {
+            width: 100vw;
+            height: 100vh;
+            background: #dff6dd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #snake {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 20px;
+            top: 100px;
+        }
+
+        #food {
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #scoreBox {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 25px;
+            font-weight: bold;
+            z-index: 100;
+        }
+
+        #lifeBox {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            font-size: 25px;
+            font-weight: bold;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scoreBox">
+        Score : <span id="score">0</span>
+    </div>
+
+    <div id="lifeBox">
+        Lives : <span id="life">2</span>
+    </div>
+
+    <div id="game">
+
+        <!-- snake image -->
+        <img src="data:image/jpeg;base64,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"
+            id="snake">
+
+        <!-- food -->
+        <div id="food"></div>
+
+    </div>
+
+    <script>
+
+        let game = document.getElementById("game");
+        let snake = document.getElementById("snake");
+        let food = document.getElementById("food");
+
+        let score = document.getElementById("score");
+        let life = document.getElementById("life");
+
+        let x = 20;
+        let y = 100;
+
+        let total = 0;
+        let lives = 2;
+
+        // Initial food
+        changeFood();
+        snake.style.left = x + "px";
+        snake.style.top = y + "px";
+
+        document.addEventListener("keydown", moveSnake);
+
+        function moveSnake(e) {
+
+            if (e.key == "ArrowRight")
+                x += 20;
+
+            if (e.key == "ArrowLeft")
+                x -= 20;
+
+            if (e.key == "ArrowUp")
+                y -= 20;
+
+            if (e.key == "ArrowDown")
+                y += 20;
+
+            // Border check
+            if ( x < 0 || y < 0 ||x > game.clientWidth - 40 || y > game.clientHeight - 40) {
+
+                lives--;
+                life.innerHTML = lives;
+
+                if (lives == 0) {
+
+                    alert("Game Over\n\nScore : " + total);
+                    location.reload();
+
+                }
+
+                x = 20;
+                y = 100;
+
+            }
+
+            snake.style.left = x + "px";
+            snake.style.top = y + "px";
+
+            checkFood();
+
+        }
+
+        function checkFood() {
+
+            let snakeLeft = x;
+            let snakeTop = y;
+            let snakeRight = x + 40;
+            let snakeBottom = y + 40;
+
+            let foodLeft = parseInt(food.style.left);
+            let foodTop = parseInt(food.style.top);
+            let foodRight = foodLeft + 20;
+            let foodBottom = foodTop + 20;
+
+            if (snakeRight >= foodLeft &&snakeLeft <= foodRight &&snakeBottom >= foodTop &&snakeTop <= foodBottom) {
+
+                total++;
+                score.innerHTML = total;
+
+                changeFood();
+
+            }
+
+        }
+
+        function changeFood() {
+
+            let maxX = Math.floor((game.clientWidth - 20) / 20);
+            let maxY = Math.floor((game.clientHeight - 20) / 20);
+
+            let fx = Math.floor(Math.random() * maxX) * 20;
+            let fy = Math.floor(Math.random() * maxY) * 20;
+
+            food.style.left = fx + "px";
+            food.style.top = fy + "px";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
